@@ -25,6 +25,7 @@ interface QuerySegment {
 export class ExternalSearchComponent implements OnInit, OnDestroy {
 	isOpen = false;
 	hasQuery = false;
+	isBrowseSearch = false; // Track if this is a browse search
 	externalLinks: ExternalLink[] = [];
 	constructor() {}
 
@@ -44,7 +45,16 @@ export class ExternalSearchComponent implements OnInit, OnDestroy {
 	private checkWindowLocation(): void {
 		const urlParams = new URLSearchParams(window.location.search);
 		const query = urlParams.get("query"); // Get the single string value for 'query'
+		const fnParam = urlParams.get("fn"); // Check for fn parameter
 
+		// Check if this is a browse search
+		if (fnParam === "BrowseSearch") {
+			this.isBrowseSearch = true;
+			this.hasQuery = false;
+			this.externalLinks = [];
+			return; // Exit early, don't process the query
+		}
+		
 		if (query) {
 			this.hasQuery = true;
 			let queriesArray: string[];
@@ -449,7 +459,7 @@ export class ExternalSearchComponent implements OnInit, OnDestroy {
 			local_library:
 				"M12 11.55C9.64 9.35 6.48 8 3 8v11c3.48 0 6.64 1.35 9 3.55 2.36-2.19 5.52-3.55 9-3.55V8c-3.48 0-6.64 1.35-9 3.55zM12 8c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3z",
 			hwpep:
-				"M10.3 4v.4l-.2.2c-.3.1-.3.1-.3.4V5.6l-.1.7v.5l-.1 1.4-.1 1.3-.2 2.2-.3 3.1a541.2 541.2 0 0 0 0 1.6c-.3 2.2-.4 4.4-.6 6.7h.5v.4l-.1.3-.1.3h-1l.2-3.6v-.6l.5-4.7a1011.8 1011.8 0 0 0 .8-8.8v-.5l.2-.7V5c0-.3 0-.5.2-.7l.7-.3ZM12.8 1v2.2l-.7.3V23h.7v.7h-.5l-.3.1h-.8a71120.5 71120.5 0 0 1 .5-15.8V5.7l.1-2.2a51.7 51.7 0 0 1 0-1.2c0-.6 0-.6.3-.9.4-.3.4-.3.7-.3zm2.8-.8v1.5l-.6.4.7 7.9a876.3 876.3 0 0 1 .9 9.2 100 100 0 0 0 .3 3.8h.7v.7c-.5 0-1 .1-1.6 0-.2-.1-.1-.6-.1-.9v-.3a447.9 447.9 0 0 1-.1-1.5l-.2-1.8v-1.8A5865.3 5865.3 0 0 1 15 11a10605.6 10605.6 0 0 1-.5-8.5v-.3l.1-1.6.2-.2h.2c.2-.2.2-.2.5-.2zM10.3 4v.3l.3-.1.6-.1a49184.6 49184.6 0 0 1-.3 13.2l-.2 5.9H8.9l-.1.8H7.7l.2-3.5v-.6l.5-4.7a1011.8 1011.8 0 0 0 .8-8.8v-.5l.2-.7V5c0-.3 0-.5.2-.7l.7-.3ZM9.1 5l-.5 5.8-.1 1.3a6151 6151 0 0 1-.5 5.3l-.6 5.8H5.3V6.9l2.5-1.3.3-.2.3-.1.3-.2h.4Zm3.7-3.9.1 2 .8-.4h.3A88714.3 88714.3 0 0 1 15.2 22v1.1h-2.4v.6h-.5l-.3.1h-.8a71120.5 71120.5 0 0 1 .5-15.8V5.7l.1-2.2a51.7 51.7 0 0 1 0-1.2c0-.6 0-.6.3-.9.4-.3.4-.3.7-.3zm6.4-1v23h-1.6v.7c-.5 0-1 .1-1.6 0-.2-.1-.1-.6-.1-.9v-.3a447.9 447.9 0 0 1-.1-1.5l-.2-1.8v-1.8A5875.8 5875.8 0 0 1 15 11a10516.3 10516.3 0 0 1-.5-8.5v-.3l.1-1.6.2-.2h.2c.2-.2.2-.2.5-.2v1.4l.6-.2A3801.8 3801.8 0 0 1 17 1l2-1z",
+				"M4.3 15.5V7.1l2-1c1.6-.7 2-.9 2.1-.8l-2 18.6H4.3ZM7.6 24v-.3A16209.8 16209.8 0 0 1 9.4 5v-.2l.7-.3.7-.3v2a5886.5 5886.5 0 0 0-.5 17.2v.6H7.5Zm4.2-6.9V3.6l1-.4 1-.5v.1a15874.6 15874.6 0 0 1 1.4 21v.2h-3.5ZM17 23a2489 2489 0 0 0-2-20.7L19.5 0v24h-2.5z",
 			gscholar:
 				'M18.308 13.985s0 .004.005.004c.43.91.674 1.926.674 2.999a6.994 6.994 0 1 1-13.315-2.994 6.821 6.821 0 0 1 .965-1.5 6.98 6.98 0 0 1 5.358-2.496c1.573 0 3.025.52 4.196 1.4a7.174 7.174 0 0 1 1.864 2.1c.094.159.178.327.258.491zm1.236-.881a8.493 8.493 0 0 0-15.109 0L0 9.496 11.99 0l11.99 9.496-4.436 3.612Z" style="stroke-width:1',
 		};

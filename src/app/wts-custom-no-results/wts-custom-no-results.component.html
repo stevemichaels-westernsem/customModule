@@ -25,23 +25,25 @@
 			<li class="no-results-option">{{ 'nui.noresults.suggestions3' | translate }}</li>
 			<li class="no-results-option">{{ 'nui.noresults.suggestions4' | translate }}</li>
 			<li class="no-results-option">{{ 'nui.noresults.suggestions5' | translate }}</li>
-			<li *ngFor="let link of externalLinks"
-				class="no-results-option">
-				<span>{{ 'nui.noresults.suggestions6' | translate }} </span>
-				<a 
-					[href]="link.url"
-					target="_blank"
-					rel="noopener noreferrer">
-					<span>{{ link.translationKey | translate }}</span>
-					<span class="mat-icon nde-mat-icon-size mat-icon-no-color" data-mat-icon-name="Open-in-a-new-window">
-						<svg height="100%" viewBox="0 0 24 24" fit="" width="100%" preserveAspectRatio="xMidYMid meet" focusable="false">
-							<g>
-								<path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
-							</g>
-						</svg>
-					</span>
-				</a>
-			</li>
+			@if(hasQuery && !isBrowseSearch) {
+				<li *ngFor="let link of externalLinks"
+					class="no-results-option">
+					<span>{{ 'nui.noresults.suggestions6' | translate }} </span>
+					<a 
+						[href]="link.url"
+						target="_blank"
+						rel="noopener noreferrer">
+						<span>{{ link.translationKey | translate }}</span>
+						<span class="mat-icon nde-mat-icon-size mat-icon-no-color" data-mat-icon-name="Open-in-a-new-window">
+							<svg height="100%" viewBox="0 0 24 24" fit="" width="100%" preserveAspectRatio="xMidYMid meet" focusable="false">
+								<g>
+									<path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
+								</g>
+							</svg>
+						</span>
+					</a>
+				</li>
+			}
 		</ul>
 	</div>
 </div>

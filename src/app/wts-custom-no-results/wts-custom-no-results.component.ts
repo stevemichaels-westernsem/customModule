@@ -25,6 +25,8 @@ interface QuerySegment {
 export class WtsCustomNoResultsComponent implements OnInit, OnDestroy {
 	isOpen = false;
 	hasQuery = false;
+	
+	isBrowseSearch = false; // Track if this is a browse search
 	externalLinks: ExternalLink[] = [];
 	expandResultsUrl = '';
 	showExpandResults = false;
@@ -61,6 +63,15 @@ export class WtsCustomNoResultsComponent implements OnInit, OnDestroy {
 	private checkWindowLocation(): void {
 		const urlParams = new URLSearchParams(window.location.search);
 		const query = urlParams.get("query"); // Get the single string value for 'query'
+		const fnParam = urlParams.get("fn"); // Check for fn parameter
+
+		// Check if this is a browse search
+		if (fnParam === "BrowseSearch") {
+			this.isBrowseSearch = true;
+			this.hasQuery = false;
+			this.externalLinks = [];
+			return; // Exit early, don't process the query
+		}
 
 		if (query) {
 			this.hasQuery = true;

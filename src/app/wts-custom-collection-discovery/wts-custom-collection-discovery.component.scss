@@ -1,0 +1,14 @@
+.item-grid-added-card {
+	border-radius: 0 0 .5rem .5rem;
+	border-top: none;
+	border-right: 1px solid var(--darkBG);
+	border-bottom: 1px solid var(--darkBG);
+	border-left: 1px solid var(--darkBG);
+	height: 75px;
+	padding: 0 1rem 1rem 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: .5rem;
+	position: relative;
+	text-decoration: none;
+}
