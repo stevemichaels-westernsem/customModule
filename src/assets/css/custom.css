@@ -339,9 +339,6 @@ html {
 							overflow: hidden;
 							clip: rect(0,0,0,0);
 						}
-						.mat-mdc-button {
-							margin-left: 1em;
-						}
 					}
 					.search-result-content {
 						.filters-container {
@@ -458,7 +455,8 @@ html {
 							mat-card-content {
 								.resource-img {
 									object-fit: contain!important;
-									padding: 0 1.5rem;
+									padding: 1.5rem;
+									height: fit-content;
 								}
 								.mat-icon {
 									svg {
@@ -592,6 +590,16 @@ html {
 							svg g path {
 								fill: var(--sys-secondary)!important;
 							}
+						}
+					}
+				}
+			}
+			nde-collection-discovery-container {
+				.results-container {
+					nde-collection-discovery-gallery-item {
+						.item-grid-card {
+							border-radius: .5rem 4rem 0 0;
+							border-bottom: none;
 						}
 					}
 				}
