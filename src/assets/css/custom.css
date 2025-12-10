@@ -18,6 +18,7 @@
   --sys-surface-container-highest: #ccdedd;
   --sys-surface-container-low: #f2f7f7;
   --sys-surface-tint: #557989;
+  --sys-CL-drop-shadow: #4b4b4b;
   --sys-CL-footer-background: #2b4e72;
   --sys-CL-header-border: #1a1a1a;
   --mat-menu-container-color: var(--sys-background);
@@ -25,6 +26,10 @@
 
 html {
 	body {
+		::selection {
+			background-color: #ffd24f;
+			color: #205392;
+		}
 		.cdk-overlay-container {
 			.cdk-global-overlay-wrapper:has(.mdc-snackbar) {
 				/* Move login snackbar to top for better discoverabilty and grouping with user avatar */
@@ -89,10 +94,10 @@ html {
 						font-size: 2rem !important;
 					}
 				}
-				.filters-container {
+				.filters-container, .collection-discovery-gallery-container {
 					.mat-mdc-button:not(:disabled) {
 						/*Add border to "filters" search button and "relevance" dropdown*/
-						border: 1px solid var(--sys-primary)!important;
+						/*border: 1px solid var(--sys-primary)!important;*/
 						border-radius: .5rem;
 					}
 				}
@@ -169,7 +174,7 @@ html {
 											&.carousel-card {
 												.mat-mdc-card-image {
 													object-fit:contain;
-													filter: drop-shadow(1px 1px 2px #4b4b4b);
+													filter: drop-shadow(1px 1px 2px var(--sys-CL-drop-shadow));
 												}
 											}
 										}
@@ -386,7 +391,7 @@ html {
 						}
 						nde-record-image .record-thumbnail {
 							outline: none !important;
-							filter: drop-shadow(2px 2px 4px);
+							filter: drop-shadow(2px 2px 4px var(--sys-CL-drop-shadow));
 						}
 						/*Make record title bigger and bolder*/
 						nde-record-title {
@@ -599,7 +604,11 @@ html {
 					nde-collection-discovery-gallery-item {
 						.item-grid-card {
 							border-radius: .5rem 4rem 0 0;
-							border-bottom: none;
+							/*border-bottom: none;*/
+							.grid-thumbnail-container img {
+								border-radius: unset;
+								filter: drop-shadow(1px 1px 2px var(--sys-CL-drop-shadow));
+							}
 						}
 					}
 				}
