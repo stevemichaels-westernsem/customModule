@@ -97,42 +97,14 @@ function isScriptLoaded(url) {
 		content: "all"
 	});
 
+	// Add SVG favicon
+	addLinkOnce({
+		rel: "icon",
+		type: "image/svg+xml",
+		href: ICON_BASE_PATH + "favicon.svg"
+	});
+	
 	// Add Apple Touch Icons
-	addLinkOnce({
-		rel: "apple-touch-icon",
-		sizes: "57x57",
-		href: ICON_BASE_PATH + "apple-icon-57x57.png"
-	});
-	addLinkOnce({
-		rel: "apple-touch-icon",
-		sizes: "60x60",
-		href: ICON_BASE_PATH + "apple-icon-60x60.png"
-	});
-	addLinkOnce({
-		rel: "apple-touch-icon",
-		sizes: "72x72",
-		href: ICON_BASE_PATH + "apple-icon-72x72.png"
-	});
-	addLinkOnce({
-		rel: "apple-touch-icon",
-		sizes: "76x76",
-		href: ICON_BASE_PATH + "apple-icon-76x76.png"
-	});
-	addLinkOnce({
-		rel: "apple-touch-icon",
-		sizes: "114x114",
-		href: ICON_BASE_PATH + "apple-icon-114x114.png"
-	});
-	addLinkOnce({
-		rel: "apple-touch-icon",
-		sizes: "120x120",
-		href: ICON_BASE_PATH + "apple-icon-120x120.png"
-	});
-	addLinkOnce({
-		rel: "apple-touch-icon",
-		sizes: "144x144",
-		href: ICON_BASE_PATH + "apple-icon-144x144.png"
-	});
 	addLinkOnce({
 		rel: "apple-touch-icon",
 		sizes: "152x152",
@@ -143,99 +115,7 @@ function isScriptLoaded(url) {
 		sizes: "180x180",
 		href: ICON_BASE_PATH + "apple-icon-180x180.png"
 	});
-	addLinkOnce({
-		rel: "apple-touch-icon-precomposed",
-		href: ICON_BASE_PATH + "apple-icon-precomposed.png"
-	});
-	addLinkOnce({
-		rel: "apple-touch-icon",
-		href: ICON_BASE_PATH + "apple-icon.png"
-	});
-
-	// Add Standard Favicons
-	addLinkOnce({
-		rel: "icon",
-		type: "image/png",
-		sizes: "16x16",
-		href: ICON_BASE_PATH + "favicon-16x16.png"
-	});
-	addLinkOnce({
-		rel: "icon",
-		type: "image/png",
-		sizes: "32x32",
-		href: ICON_BASE_PATH + "favicon-32x32.png"
-	});
-	addLinkOnce({
-		rel: "icon",
-		type: "image/png",
-		sizes: "96x96",
-		href: ICON_BASE_PATH + "favicon-96x96.png"
-	});
-
-	// Add Microsoft Tile Icons
-	addLinkOnce({
-		rel: "icon",
-		type: "image/png",
-		sizes: "70x70",
-		href: ICON_BASE_PATH + "ms-icon-70x70.png"
-	});
-	addLinkOnce({
-		rel: "icon",
-		type: "image/png",
-		sizes: "144x144",
-		href: ICON_BASE_PATH + "ms-icon-144x144.png"
-	});
-	addLinkOnce({
-		rel: "icon",
-		type: "image/png",
-		sizes: "150x150",
-		href: ICON_BASE_PATH + "ms-icon-150x150.png"
-	});
-	addLinkOnce({
-		rel: "icon",
-		type: "image/png",
-		sizes: "310x310",
-		href: ICON_BASE_PATH + "ms-icon-310x310.png"
-	});
-
-	// Add Android Icons
-	addLinkOnce({
-		rel: "icon",
-		type: "image/png",
-		sizes: "36x36",
-		href: ICON_BASE_PATH + "android-icon-36x36.png"
-	});
-	addLinkOnce({
-		rel: "icon",
-		type: "image/png",
-		sizes: "48x48",
-		href: ICON_BASE_PATH + "android-icon-48x48.png"
-	});
-	addLinkOnce({
-		rel: "icon",
-		type: "image/png",
-		sizes: "72x72",
-		href: ICON_BASE_PATH + "android-icon-72x72.png"
-	});
-	addLinkOnce({
-		rel: "icon",
-		type: "image/png",
-		sizes: "96x96",
-		href: ICON_BASE_PATH + "android-icon-96x96.png"
-	});
-	addLinkOnce({
-		rel: "icon",
-		type: "image/png",
-		sizes: "144x144",
-		href: ICON_BASE_PATH + "android-icon-144x144.png"
-	});
-	addLinkOnce({
-		rel: "icon",
-		type: "image/png",
-		sizes: "192x192",
-		href: ICON_BASE_PATH + "android-icon-192x192.png"
-	});
-
+	
 	// Load External Javascripts
 	const discoveryShowcaseUrl = JS_BASE_PATH + "discovery-showcase.bundled.js";
 	const userwayUrl = "https://cdn.userway.org/widget.js";
