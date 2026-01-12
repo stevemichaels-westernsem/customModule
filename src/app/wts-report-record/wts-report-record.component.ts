@@ -16,7 +16,7 @@ export class WtsReportRecordComponent implements OnInit {
   recordErrorLink = '';
 
   ngOnInit() {
-	// console.log('PnxTestComponent ngOnInit:' + this.hostComponent); // Debug: Log component and inspect the hostComponent input for troubleshooting or checking
+	// console.log('WtsReportRecordComponent ngOnInit:' + this.hostComponent); // Debug: Log component and inspect the hostComponent input for troubleshooting or checking
     
 	const baseUrl = 'https://westernsem.libwizard.com/f/problem?'
 
