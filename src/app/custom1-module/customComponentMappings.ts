@@ -1,5 +1,6 @@
 import { ExternalSearchComponent } from '../external-search/external-search.component';
 //import { WtsCustomCollectionDiscoveryComponent } from '../wts-custom-collection-discovery/wts-custom-collection-discovery.component';
+import { GoogleBooksDescComponent } from '../google-books-desc/google-books-desc.component';
 import { WtsCustomLibraryResourcesComponent } from '../wts-custom-library-resources/wts-custom-library-resources.component';
 import { WtsCustomNoResultsComponent } from '../wts-custom-no-results/wts-custom-no-results.component';
 import { WtsHeaderComponent } from '../wts-header/wts-header.component';
@@ -12,6 +13,7 @@ import { WtsZoteroInCitationComponent } from '../wts-zotero-in-citation/wts-zote
 // Define the map
 export const selectorComponentMap = new Map<string, any>([
 	['nde-search-bar-filters-before',ExternalSearchComponent],
+	['nde-full-display-details-bottom',GoogleBooksDescComponent],
 	//['nde-collection-discovery-gallery-item-bottom',WtsCustomCollectionDiscoveryComponent],
 	['nde-user-panel-after',WtsCustomLibraryResourcesComponent],
 	['nde-search-no-results',WtsCustomNoResultsComponent],

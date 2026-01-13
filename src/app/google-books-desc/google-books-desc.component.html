@@ -1,0 +1,22 @@
+@if (shouldShowContent) {
+<div class="flex-column full-display-details-container">
+	<div class="full-display-detail">
+		<h5 class="details-label mat-title-small">More Information</h5>
+		<div>
+			<div class="ng-star-inserted">
+				<div class="flex-row flex-layout-center">
+					<div class="break-word">
+						<p dir="auto" class="mat-body-medium">{{ googleDesc }}</p>
+						<p dir="auto" class="mat-body-medium">
+							<small style="float:right">
+								<a [href]="googleInfoLink" target="_blank" rel="noopener noreferrer">Provided by Google Books</a>
+							</small>
+						</p>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+}

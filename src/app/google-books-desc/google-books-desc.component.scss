@@ -1,0 +1,35 @@
+.full-display-details-container {
+	gap: .5rem;
+	margin: .5rem 0;
+	.full-display-detail {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		a {
+			color: var(--sys-primary);
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		p {
+			margin-top: unset;
+		}
+		.value-prefix {
+			padding-inline-end: .25rem;
+		}
+		.details-label {
+			width: 9rem;
+			min-width: 9rem;
+			margin-right: 1rem;
+			white-space: normal;
+			word-break: break-word;
+		}
+	}
+}
+
+@media only screen and (min-width: 600px) {
+    .full-display-detail {
+        gap: 1rem;
+    }
+}
