@@ -633,12 +633,22 @@ html {
 					color: var(--sys-on-primary);
 				}
 			}
+			nde-general-search-header {
+				background-color: rgba(0,0,0,0.333);
+				background-blend-mode: darken;
+				h1 {
+					text-shadow: -1px -1px 0 var(--sys-primary), 1px -1px 0 var(--sys-primary), -1px 1px 0 var(--sys-primary), 1px 1px 0 var(--sys-primary);
+				}
+			}
 		}
 		.mat-mdc-snack-bar-container {
 			.mat-mdc-snackbar-surface {
 				/*Change background color of "please sign-in for more results" floating box*/
 				background-color: #f1f1f2 !important;
 			}
+		}
+		.pagination-container .current-page {
+			cursor: auto;
 		}
 		mat-mdc-form-field-flex {
 			/*Change background color of Form Fields*/
