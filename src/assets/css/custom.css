@@ -115,45 +115,44 @@ html {
 							border: 1px inset var(--sys-outline-variant);
 							border-radius: .25rem;
 						}
+						.full-display-detail[data-qa="detail_contents"] ul.list-group {
+							list-style-type: unset;
+						}
 					}
 				}
 				nde-full-display-service-container, nde-entity-related-docs-list {
-					nde-view-it {
-						nde-view-it-section {
-							nde-view-it-card {
-								.view-it-text-with-icon {
-									.freeresource::before {
-										display: inline-block;
-										background-image: url('../images/OA_logo_green.svg');
-										background-repeat: no-repeat;
-										background-size: 13px 17px;
-										position: relative;
-										top: 2px;
-										content: ' ';
-										height: 17px;
-										width: 16px;
-									}
-									a {
-										color: var(--sys-primary);
-									}
-								}
-								button {
-									&:focus {
-										outline: unset !important;
-									}
-									& :hover {
-										text-decoration: underline;
-									}
-									.package-name {
-										color: #0f7d00;
-										font-size: 1.2em;
-										font-weight: var(--sys-body-medium-weight);
-									}
-									.mat-icon {
-										svg g path {
-											fill: var(--sys-outline);
-										}
-									}
+					nde-view-it nde-view-it-section nde-view-it-card {
+						.view-it-text-with-icon {
+							.freeresource::before {
+								display: inline-block;
+								background-image: url('../images/OA_logo_green.svg');
+								background-repeat: no-repeat;
+								background-size: 13px 17px;
+								position: relative;
+								top: 2px;
+								content: ' ';
+								height: 17px;
+								width: 16px;
+							}
+							a {
+								color: var(--sys-primary);
+							}
+						}
+						button {
+							&:focus {
+								outline: unset !important;
+							}
+							& :hover {
+								text-decoration: underline;
+							}
+							.package-name {
+								color: #0f7d00;
+								font-size: 1.2em;
+								font-weight: var(--sys-body-medium-weight);
+							}
+							.mat-icon {
+								svg g path {
+									fill: var(--sys-outline);
 								}
 							}
 						}
@@ -330,7 +329,7 @@ html {
 						font-weight: 600!important;
 					}
 				}
-				nde-search-results-container, nde-full-display-container {
+				nde-search-results-container, nde-full-display-container, nde-journal-search-container {
 					nde-sort-by {
 						/*Visually hide Sort By label*/
 						.sort-by-label {
@@ -539,6 +538,22 @@ html {
 				}
 			}
 			header {
+				/* Move Header from Component to html template */
+				&#main-site-header {
+					background-color: var(--sys-secondary);
+					height: 6.75rem;
+					border-bottom: 1px outset var(--sys-CL-header-border);
+					padding: 5px 0;
+					#wts-menu {
+						.navbar {
+							padding: 0 4rem;
+							margin-top: 1rem;
+							#wts-logo {
+							width: 160px;
+							}
+						}
+					}
+				}
 				&.top-bar {
 					/*Change header background color and add bottom border*/
 					border-bottom: 1px outset var(--sys-CL-header-border) !important;
