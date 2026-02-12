@@ -117,22 +117,9 @@ function isScriptLoaded(url) {
 	});
 	
 	// Load External Javascripts
-	const discoveryShowcaseUrl = JS_BASE_PATH + "discovery-showcase.bundled.js";
 	const userwayUrl = "https://cdn.userway.org/widget.js";
 	const userwayAccount = "dDGBItJNUw"; // ← replace with your actual ID
 	const almaHoursUrl = JS_BASE_PATH + "alma_hours_widget.js";
-
-	// Load Discovery Showcase as ES module
-	if (!isScriptLoaded(discoveryShowcaseUrl)) {
-		const moduleScript = document.createElement("script");
-		moduleScript.type = "module";
-		moduleScript.src = discoveryShowcaseUrl;
-		moduleScript.onload = () => console.log("Discovery Showcase module loaded.");
-		moduleScript.onerror = () => console.error("Failed to load Discovery Showcase module.");
-		document.head.appendChild(moduleScript);
-	} else {
-		console.log("Discovery Showcase module already loaded.");
-	}
 
 	// Load UserWay widget with data-account
 	if (!isScriptLoaded(userwayUrl)) {
